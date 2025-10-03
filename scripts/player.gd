@@ -9,7 +9,6 @@ class_name Player
 @export var health : int = maxHealth
 @export var coins : int = 0
 
-
 var facing: Vector2 = Vector2.ZERO
 
 
