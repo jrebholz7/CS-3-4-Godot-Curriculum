@@ -1,5 +1,5 @@
 extends Area2D
-
+signal open_door
 
 func play_animation(reverse: bool = false) -> void:
 	var speed: int
@@ -12,3 +12,4 @@ func play_animation(reverse: bool = false) -> void:
 func _on_body_entered(body):
 	if body is Player:
 		play_animation()
+		open_door.emit
