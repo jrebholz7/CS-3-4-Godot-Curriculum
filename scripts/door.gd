@@ -1,5 +1,4 @@
 extends AnimatableBody2D
-var is_open = false
 func _ready():
 	var get_signal = get_node("res://scenes/lever.tscn")
 	if get_signal:
@@ -17,4 +16,4 @@ func set_is_open(is_open: bool) -> void:
 
 
 func _on_custom_signal_recieved(_open_door):
-	queue_free()
+	pass

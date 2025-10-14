@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://itwac34ln74u"]
+
+[ext_resource type="Script" uid="uid://cckcyf6drjopx" path="res://scripts/merchant.gd" id="1_12ke4"]
+[ext_resource type="Texture2D" uid="uid://vfcgq7twldk3" path="res://assets/New Piskel.png" id="2_7rnkl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xj0k"]
+atlas = ExtResource("2_7rnkl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gj23"]
+atlas = ExtResource("2_7rnkl")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_krsg3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xj0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gj23")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Merchant" type="Node2D"]
+script = ExtResource("1_12ke4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_krsg3")
