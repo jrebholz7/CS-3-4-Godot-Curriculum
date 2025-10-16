@@ -1,12 +1,10 @@
 extends npc
 class_name enemy_base
 @onready var sprite: Sprite2D = $Sprite2D
-
 var can_damage:bool = true
 var damage_amount:int = 0
 var damage_cooldown:float = 0
 @export var move_speed: float = 5
-
 
 
 func configure_enemy(_type: String) -> bool:
@@ -16,6 +14,7 @@ func configure_enemy(_type: String) -> bool:
 		return true
 	else: return false
 func _ready() -> void:
+	moveable = true
 	configure_enemy(type)
 
 func _process(_delta: float) -> void:

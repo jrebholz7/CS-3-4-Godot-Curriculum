@@ -14,16 +14,16 @@ class_name npc
 #@export var state
 @export var type : String = ""
 @export var target : Vector2
+@export var moveable:bool = false
 
 func _ready() -> void:
 	
 	pass
 
 func _physics_process(delta: float) -> void:
-	movement(delta)
-	move_and_slide()
-	pass
-	
+	if moveable == true:
+		movement(delta)
+		move_and_slide()
 
 
 
