@@ -36,15 +36,3 @@ func _on_area_2d_body_entered(body):
 		display_inventory()
 		await get_tree().create_timer(1).timeout
 		$AnimatedSprite2D.stop()
-	#print greeting
-	#display inventory
-		#if body.is_attacking:
-			#pass
-		#print warning
-		#become hostile
-
-func remove_from_inventory(item:String):
-	return true
-
-func change_gold(_amount:int):
-	pass
