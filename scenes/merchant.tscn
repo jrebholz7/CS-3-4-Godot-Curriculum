@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://itwac34ln74u"]
+[gd_scene load_steps=8 format=3 uid="uid://itwac34ln74u"]
 
 [ext_resource type="Script" uid="uid://cckcyf6drjopx" path="res://scripts/merchant.gd" id="1_12ke4"]
 [ext_resource type="Texture2D" uid="uid://vfcgq7twldk3" path="res://assets/New Piskel.png" id="2_7rnkl"]
+[ext_resource type="Script" uid="uid://dafjwfy2fgyno" path="res://scripts/Inventory.gd" id="3_7rnkl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1xj0k"]
 atlas = ExtResource("2_7rnkl")
@@ -41,5 +42,6 @@ sprite_frames = SubResource("SpriteFrames_krsg3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_12ke4")
+script = ExtResource("3_7rnkl")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
