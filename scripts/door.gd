@@ -1,9 +1,13 @@
 extends AnimatableBody2D
-func _ready():
-	var get_signal = get_node("res://scenes/lever.tscn")
-	if get_signal:
-		get_signal.connect("open_door", Callable(self, "_on_custom_signal_recieved"))
+var open = false
+@onready var lever: Area2D = $"Lever"
 
+func _ready():
+	lever.door_open.connect(_on_door_open)
+
+func _on_door_open():
+	print("It Worked!")
+	set_is_open(true)
 func set_is_open(is_open: bool) -> void:
 	if is_open == true:
 		$AnimatedSprite2D.frame = 0
@@ -13,7 +17,3 @@ func set_is_open(is_open: bool) -> void:
 		$AnimatedSprite2D.frame = 1
 		collision_layer = 0
 		$LightOccluder2D.visible = true
-
-
-func _on_custom_signal_recieved(_open_door):
-	pass

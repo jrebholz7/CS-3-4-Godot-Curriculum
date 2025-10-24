@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Inventory_Item" load_steps=2 format=3 uid="uid://ciw5xvuhwa5f2"]
+
+[ext_resource type="Script" uid="uid://b40gkah03ay3x" path="res://scripts/Inventory_Items_script.gd" id="1_58i72"]
+
+[resource]
+script = ExtResource("1_58i72")
+name = "big"
+price = 10
+quantity = 3
+description = "This is a poorly made potion that will work in a pinch."
+metadata/_custom_type_script = "uid://b40gkah03ay3x"

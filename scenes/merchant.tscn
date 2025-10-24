@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://itwac34ln74u"]
+[gd_scene load_steps=9 format=3 uid="uid://itwac34ln74u"]
 
 [ext_resource type="Script" uid="uid://cckcyf6drjopx" path="res://scripts/merchant.gd" id="1_12ke4"]
 [ext_resource type="Texture2D" uid="uid://vfcgq7twldk3" path="res://assets/New Piskel.png" id="2_7rnkl"]
-[ext_resource type="Script" uid="uid://dafjwfy2fgyno" path="res://scripts/Inventory.gd" id="3_7rnkl"]
+[ext_resource type="Script" uid="uid://b40gkah03ay3x" path="res://scripts/Inventory_Items_script.gd" id="4_0gj23"]
+[ext_resource type="PackedScene" uid="uid://dnen84wt1sty6" path="res://scenes/inventory.tscn" id="4_1xj0k"]
+[ext_resource type="Resource" uid="uid://ciw5xvuhwa5f2" path="res://Items/Potion.tres" id="5_krsg3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1xj0k"]
 atlas = ExtResource("2_7rnkl")
@@ -26,10 +28,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_12ke4"]
-radius = 16.0
-height = 64.0
-
 [node name="Merchant" type="CharacterBody2D"]
 script = ExtResource("1_12ke4")
 
@@ -40,8 +38,7 @@ sprite_frames = SubResource("SpriteFrames_krsg3")
 
 [node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CapsuleShape2D_12ke4")
-script = ExtResource("3_7rnkl")
+[node name="Inventory" parent="Area2D" instance=ExtResource("4_1xj0k")]
+inventory = Array[ExtResource("4_0gj23")]([ExtResource("5_krsg3"), ExtResource("5_krsg3")])
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
