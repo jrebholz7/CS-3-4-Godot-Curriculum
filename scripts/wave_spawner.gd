@@ -13,7 +13,7 @@ class_name WaveSpawner
 ## - Unlocks new enemy types at specific waves
 ## - Respects spawn weights (common vs rare enemies)
 ##
-## This uses a TEMPLATE SYSTEM:
+## This uses a TEMPLATE SYSTEM:saasa
 ##   - One generic enemy scene (scenes/enemies/enemy.tscn)
 ##   - Many enemy resource files (resources/enemies/*.tres)
 ##   - Spawner creates template, then loads resource data into it

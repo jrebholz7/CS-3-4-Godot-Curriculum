@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=3 format=3 uid="uid://by4m6rx1r1y6b"]
+
+[ext_resource type="SpriteFrames" uid="uid://doqat4n0qsu7i" path="res://resources/animations/blue_slime_frames.tres" id="1_0bm0v"]
+[ext_resource type="Script" uid="uid://bxtjti5hlu2op" path="res://scripts/resources/enemy_resource.gd" id="2_5xla1"]
+
+[resource]
+script = ExtResource("2_5xla1")
+enemy_id = "super-slime"
+enemy_name = "Basic Slime"
+animated_frames = ExtResource("1_0bm0v")
+sprite_scale = 2.0
+max_health = 1000.0
+contact_damage = 100.0
+move_speed = 50.0
+detection_range = 10000.0
+xp_value = 1000
+spawn_weight = 20
+credit_cost = 100
