@@ -212,6 +212,8 @@ func apply_separation(current_direction: Vector2) -> Vector2:
 ## Take damage from player weapons
 ## Returns true if this damage killed the enemy
 func take_damage(amount: float) -> bool:
+	amount += player.damage
+	amount *= player.damage_mult
 	current_health -= amount
 
 	# Visual feedback (optional: flash sprite)
@@ -238,8 +240,8 @@ func die() -> bool:
 		xp_drop.global_position = global_position
 		# Add to parent scene so it can access %Player unique name
 		get_parent().add_child(xp_drop)
-
 	# Remove enemy
+	player.kills += 1
 	queue_free()
 	return true
 

@@ -46,6 +46,11 @@ class_name Player
 # Movement - Controls how fast the player moves
 @export var move_speed: float = 200.0
 
+@export var kills: int = 0
+
+@export var damage: float = 1
+
+@export var damage_mult: float = 1
 
 var facing: Vector2 = Vector2.ZERO
 
@@ -64,6 +69,9 @@ var xp_to_next_level: float = 100.0
 
 # Signals for UI updates
 signal health_changed(new_health: float, max_health: float)
+signal speed_changed(new_speed: float, max_speed: float)
+signal damage_changed(new_damage: float, max_damage: float)
+signal damage_mult_changed(new_damage_mult:float, max_damage_mult: float)
 signal xp_changed(current_xp: float, xp_needed: float)
 signal level_up(new_level: int)
 signal player_died
@@ -220,3 +228,11 @@ func upgrade_health(amount: float) -> bool:
 func upgrade_speed(amount: float) -> bool:
 	move_speed += amount
 	return true
+
+func upgrade_damage(amount: float) -> bool:
+	damage += amount
+	return true	
+	
+func upgrade_damage_mult(amount: float) -> bool:
+	damage_mult += amount
+	return true	

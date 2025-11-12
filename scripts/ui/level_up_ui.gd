@@ -63,7 +63,7 @@ class_name LevelUpUI
 
 @onready var player: Player = %Player
 
-
+@onready var HUD_Reference = $"../HUD"
 ## Available upgrade resources
 @export var available_upgrades: Array[StatUpgradeResource] = [] 
 
@@ -117,6 +117,7 @@ func _on_upgrade_selected(upgrade) -> void:
 	# Apply the upgrade using the resource's method
 	# upgrade should be a StatUpgradeResource
 	upgrade.apply_to_player(player)
+	HUD_Reference._update_stats_display()
 
 	# Hide UI and unpause
 	hide()

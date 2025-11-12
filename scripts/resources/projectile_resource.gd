@@ -61,6 +61,8 @@ class_name ProjectileResource
 ## The visual appearance of the projectile
 @export var texture: Texture2D
 
+
+
 ## Size of the projectile sprite
 @export var scale: Vector2 = Vector2(1.0, 1.0)
 

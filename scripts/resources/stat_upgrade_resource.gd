@@ -78,7 +78,8 @@ class_name StatUpgradeResource
 enum UpgradeType {
 	HEALTH,    ## Increases max health
 	DAMAGE,    ## Increases damage
-		
+	SPEED,     ## Incrases speed
+	DAMAGEMULT, ## damage multiplier
 }
 
 @export_group("Upgrade Identity")
@@ -113,6 +114,10 @@ func apply_to_player(player: Player) -> bool:
 			return player.upgrade_health(amount)
 		UpgradeType.DAMAGE:
 			return player.upgrade_damage(amount)
+		UpgradeType.SPEED:
+			return player.upgrade_speed(amount)
+		UpgradeType.DAMAGEMULT:
+			return player.upgrade_damage_mult(amount)
 		_:
 			push_error("Unknown stat_type: " + str(stat_type))
 			return false

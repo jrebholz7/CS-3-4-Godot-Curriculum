@@ -24,6 +24,8 @@ class_name WeaponResource
 
 @export_group("Item Identity")
 ## Unique identifier for this weapon
+
+
 @export var item_id: String = ""
 
 ## Display name for this weapon
@@ -86,11 +88,11 @@ func fire(_shooter: Node2D, _target_direction: Vector2) -> void:
 
 
 ## Calculate actual damage based on player stats and weapon accuracy
-## Currently returns base damage; player_accuracy_bonus is for future implementation
-func calculate_damage(_player_accuracy_bonus: float) -> float:
-	var base = base_damage
-	# Future: Add player stat modifiers here
-	return base
+### Currently returns base damage; player_accuracy_bonus is for future implementation
+#func calculate_damage(_player_accuracy_bonus: float) -> float:
+	#var base = base_damage
+	## Future: Add player stat modifiers here
+	#return base
 
 
 ## Calculate actual fire rate based on weapon stats
