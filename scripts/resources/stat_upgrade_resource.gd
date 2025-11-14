@@ -113,6 +113,7 @@ func apply_to_player(player: Player) -> bool:
 		UpgradeType.HEALTH:
 			return player.upgrade_health(amount)
 		UpgradeType.DAMAGE:
+			print("damage upgrade worked in stat upgrade resource")
 			return player.upgrade_damage(amount)
 		UpgradeType.SPEED:
 			return player.upgrade_speed(amount)

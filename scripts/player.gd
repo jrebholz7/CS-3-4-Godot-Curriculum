@@ -231,6 +231,7 @@ func upgrade_speed(amount: float) -> bool:
 
 func upgrade_damage(amount: float) -> bool:
 	damage += amount
+	print("damage upgraded in player")
 	return true	
 	
 func upgrade_damage_mult(amount: float) -> bool:

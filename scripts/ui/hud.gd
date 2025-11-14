@@ -117,3 +117,4 @@ func _update_stats_display() -> void:
 		print("Damage: " + str(int(player.damage)) + ", Damage Multiplier: " + (str(int(player.damage_mult))))
 		
 		stats_label.text = stats_text
+"res://resources/weapons/shotgun.tres"
