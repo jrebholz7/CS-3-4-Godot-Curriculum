@@ -214,7 +214,9 @@ func apply_separation(current_direction: Vector2) -> Vector2:
 func take_damage(amount: float) -> bool:
 	amount += player.damage
 	amount *= player.damage_mult
+	
 	current_health -= amount
+
 
 	# Visual feedback (optional: flash sprite)
 	if sprite:

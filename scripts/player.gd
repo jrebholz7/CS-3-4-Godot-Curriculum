@@ -88,6 +88,10 @@ func _ready():
 	collision_layer = 1
 	collision_mask = 2 | 8  # Collide with enemies (layer 2) and XP drops (layer 8)
 
+func _process(delta: float) -> void:
+	if is_input_pressed("weapon_switch"):
+		return true
+
 func _physics_process(_delta):
 	handle_movement()
 
@@ -231,9 +235,12 @@ func upgrade_speed(amount: float) -> bool:
 
 func upgrade_damage(amount: float) -> bool:
 	damage += amount
-	print("damage upgraded in player")
 	return true	
 	
 func upgrade_damage_mult(amount: float) -> bool:
 	damage_mult += amount
-	return true	
+	return true
+
+
+func switch_weapon(_delta):
+	return true

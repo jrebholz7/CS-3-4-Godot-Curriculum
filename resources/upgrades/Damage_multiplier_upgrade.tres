@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_fnpmm")
 upgrade_id = "damage_multiplier"
-upgrade_name = "Damage Boost"
-description = "Increases your damage"
+upgrade_name = "Damage Multiplier Boost"
+description = "Increases your damage by 5%"
 stat_type = 3
 amount = 0.05

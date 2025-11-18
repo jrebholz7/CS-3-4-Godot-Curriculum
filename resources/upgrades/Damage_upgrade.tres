@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_b5ibr")
-upgrade_id = "damage_multiplier_boost"
-upgrade_name = "Damage Multiplier"
-description = "Increases your damage by 5%"
+upgrade_id = "Damage_boost"
+upgrade_name = "Damage Boost"
+description = "Increases your damage by 5"
 stat_type = 1
-amount = 0.05
+amount = 5.0
