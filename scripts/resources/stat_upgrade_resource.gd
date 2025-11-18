@@ -117,7 +117,6 @@ func apply_to_player(player: Player) -> bool:
 		UpgradeType.SPEED:
 			return player.upgrade_speed(amount)
 		UpgradeType.DAMAGEMULT:
-			print("it worked")
 			return player.upgrade_damage_mult(amount)
 			
 		_:

@@ -113,7 +113,6 @@ func _update_level_display() -> void:
 func _update_stats_display() -> void:
 	if stats_label and player:
 		var stats_text = ""
-		stats_text += "Speed: " + str(int(player.move_speed)) + ", Damage: " + str(int(player.damage)) + ", Damage Multiplier: " + (str(int(player.damage_mult)))
-		print("Damage: " + str(int(player.damage)) + ", Damage Multiplier: " + (str(int(player.damage_mult))))
+		stats_text += "Speed: " + str(player.move_speed) + ", Damage: " + str(player.damage) + ", Damage Multiplier: " + (str(player.damage_mult))
 		
 		stats_label.text = stats_text

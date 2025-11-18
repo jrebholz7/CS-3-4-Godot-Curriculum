@@ -50,7 +50,7 @@ class_name Player
 
 @export var damage: float = 1
 
-@export var damage_mult: float = 1
+@export var damage_mult: float = 1.0
 
 var facing: Vector2 = Vector2.ZERO
 
@@ -83,17 +83,26 @@ func _input(event: InputEvent) -> void:
 
 func _ready():
 	current_health = max_health
+	const AR = preload("uid://f8uiultf5pa4")
+	const BASIC_PISTOL = preload("uid://c7qxm2v8pqb3h")
+	const TESTER_WEAPON = preload("uid://bia5a5i0i5la4")
+	const SHOTGUN = preload("uid://c73jpq85ul2ig")
 
 	# Set collision layers (Layer 1 = player)
 	collision_layer = 1
 	collision_mask = 2 | 8  # Collide with enemies (layer 2) and XP drops (layer 8)
 
-func _process(delta: float) -> void:
-	if is_input_pressed("weapon_switch"):
-		return true
 
+
+	
 func _physics_process(_delta):
+	var number = 1
 	handle_movement()
+	if Input.is_action_pressed("switch_weapon"):
+		number += 1
+		if number > 4:
+			number = 1
+		switch_weapon(number)
 
 func handle_movement():
 	# Get input direction from arrow keys
@@ -242,5 +251,13 @@ func upgrade_damage_mult(amount: float) -> bool:
 	return true
 
 
-func switch_weapon(_delta):
+func switch_weapon(number: int):
+	if number == 1:
+		$WeaponSystem.equipped_weapon = $WeaponSystem.BASIC_PISTOL
+	if number == 2:
+		$WeaponSystem.equipped_weapon = $WeaponSystem.AR
+	if number == 3:
+		$WeaponSystem.equipped_weapon = $WeaponSystem.SHOTGUN
+	if number == 4:
+		$WeaponSystem.equipped_weapon = $WeaponSystem.TESTER_WEAPON
 	return true
